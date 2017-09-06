@@ -54,5 +54,22 @@ class Mycontroller extends Controller
         $komputer = ['keyboard','ram','monitor','prossesor','vga'];
         return view('latihan.tugas', compact('buah','makhlukhidup','komputer'));
     }
+    public function param($data $data2)
+    {
+        $id ='persia';
+        $campuran =['buah' =>['anggur','mangga','jeruk'],
+               'makhlukhidup' =>['kucing','buaya','kuda'],
+               'komputer' =>['hp','samsung','acer']
+                ];
+        
+        $campuran = $campuran[$data];
+
+        $mir = ['kucing' => ['anggora','persia']];
+        
+        $miio = $mir[$data2];
+        
+        return view('latihan.campuran', compact('campuran','data','miio','data2'));
+
+       }
 
 }
