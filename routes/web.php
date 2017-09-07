@@ -32,5 +32,6 @@ Route::get('/test5','Mycontroller@percobaan5');
 Route::get('/test6','Mycontroller@percobaan6');
 Route::get('/test7','Mycontroller@percobaan7');
 Route::get('/test8','Mycontroller@percobaan8');
-Route::get('param/{data}','Mycontroller@param');
-Route::get('campuran/{data?}','Mycontroller@param');
+Route::get('/parameter/{data?}/{data2?}','Mycontroller@param');
+Route::get('/coba','siswaController@percobaan');
+Route::get('/coba/{siswa}','siswaController@show');

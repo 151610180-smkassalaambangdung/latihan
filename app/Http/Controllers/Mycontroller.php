@@ -54,21 +54,28 @@ class Mycontroller extends Controller
         $komputer = ['keyboard','ram','monitor','prossesor','vga'];
         return view('latihan.tugas', compact('buah','makhlukhidup','komputer'));
     }
-    public function param($data $data2)
-    {
-        $id ='persia';
-        $campuran =['buah' =>['anggur','mangga','jeruk'],
-               'makhlukhidup' =>['kucing','buaya','kuda'],
-               'komputer' =>['hp','samsung','acer']
-                ];
-        
-        $campuran = $campuran[$data];
 
-        $mir = ['kucing' => ['anggora','persia']];
-        
-        $miio = $mir[$data2];
-        
-        return view('latihan.campuran', compact('campuran','data','miio','data2'));
+    public function param($data,$data2 = null)
+    {
+        $array = array('binatang' =>['kucing'=>['persia','anggora'],
+                                    'hamster'=>['hamtaro','hamtari'],
+                                    'kelinci'=>['anggora','persia']],
+                        
+                        'buah' => ['mangga'=>['harumanis','marijan'],
+                                      'alpukat'=>['hijau','hitam'],
+                                      'apel'=>['merah','hijau']],
+
+                        'komputer' =>['asus'=>['456UR','456'],
+                                       'dell'=>['alienware','inspiron'],
+                                       'acer'=>['6930','7780']]]]
+                                      );
+        if ($data){
+            $query = (array_keys($array[$data]));
+        }
+        if ($data2){
+            $query = (($array[$data][$data2]));
+        }
+        return view('latihan.parameter',compact('query','data','data2'));
 
        }
 

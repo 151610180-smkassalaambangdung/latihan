@@ -11,5 +11,6 @@ Daftar : <b>{{$data}} {{$data2}} </b>
 	<li>{{$key}}</li>
 </ul>
 @endforeach
+
 </body>
 </html>
